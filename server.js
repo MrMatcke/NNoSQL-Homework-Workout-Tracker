@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", {
 
 // routes
 const router = require("express").Router();
-const db = require("../models");
+const db = require("./models");
 
 //create new workout
 router.post("/api/workouts", ({ body }, res) => {
@@ -80,15 +80,15 @@ const path = require("path");
 
 
 router.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/index.html"))
+    res.sendFile(path.join(__dirname, "./public/index.html"))
 });
 
 router.get("/exercise", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/exercise.html"))
+    res.sendFile(path.join(__dirname, "./public/exercise.html"))
 });
 
 router.get("/stats", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/stats.html"))
+    res.sendFile(path.join(__dirname, "./public/stats.html"))
 });
 
 //app.use(require("./.git/"));
